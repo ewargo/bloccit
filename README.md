@@ -4,6 +4,8 @@ A Reddit-style application to demonstrate foundation programming and web develop
 
 Made with my mentor at [Bloc](http://bloc.io)
 
+GitHub URL: https://github.com/ewargo/bloccit.git
+
 
 
 == Welcome to Rails
