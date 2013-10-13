@@ -44,7 +44,7 @@ rand(4..10).times do
     end
   end
 end
-
+end
 u = User.new(
   name: 'Admin User',
   email: 'admin@11thhournow.com', 
@@ -75,4 +75,3 @@ puts "Seed finished"
 puts "#{User.count} users created"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
-end
