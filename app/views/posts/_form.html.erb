@@ -22,7 +22,14 @@
     </div>
   <% end %>
   <div class="control-group">
-        <%= f.submit "Save", class: 'btn' %>
+     <%= image_tag(current_user.image.small.url) if current_user.image? %>
+     <%= f.label :image, class: 'control-label' %>
+     <div class="controls">
+        <%= f.file_field :image %>
+     </div>
+     <br>
+     <br>
+     <%= f.submit "Save", class: 'btn' %>
     </div>
   </div>
 <% end %>
