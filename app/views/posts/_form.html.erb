@@ -21,14 +21,16 @@
       <%= f.text_area :body, rows: 8 %>
     </div>
   <% end %>
-  <div class="control-group">
-     <%= image_tag(current_user.image.small.url) if current_user.image? %>
+  <%= control_group_tag(post.errors[:image]) do %>
      <%= f.label :image, class: 'control-label' %>
      <div class="controls">
         <%= f.file_field :image %>
      </div>
+     <% end %>
      <br>
      <br>
+     <div class="control-group">
+      <div class="controls">
      <%= f.submit "Save", class: 'btn' %>
     </div>
   </div>
