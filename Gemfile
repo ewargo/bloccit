@@ -48,6 +48,12 @@ gem 'figaro'
 
 gem 'will_paginate', '~>3.0'
 
+gem 'omniauth'
+
+gem 'omniauth-facebook'
+
+gem 'certified'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

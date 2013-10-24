@@ -1,9 +1,12 @@
 class CommentsController < ApplicationController
 
+  def show
+    @comment = Comment.find(params[:id])
+
   def create
-    @comment = comment.new(params[:comment])
-    if @topic.save
-      flash[:notice] = "Topic was saved successfully."
+    @comment = current_user.comments.build(params[:comments])
+    if @comment.save
+      flash[:notice] = "Comment was saved successfully."
       redirect_to @comment
     else
       flash[:error] = "Error creating comment. Please try again."
@@ -11,10 +14,7 @@ class CommentsController < ApplicationController
     end
   end
   def destroy
-    @topic = Topic.find(params[:topic_id])
-    @post = @topic.posts.find(params[:post_id])
-
-    @comment = @post.comments.find(params[:id])
+    @comment = @comment.posts.find(params[:comments])
 
     authorize! :destroy, @comment, message: "You need to own the comment to delete it."
     if @comment.destroy
