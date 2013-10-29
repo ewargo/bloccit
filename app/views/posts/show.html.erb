@@ -15,10 +15,7 @@
   <%= render partial: "comments/comment", collection: @comments %>
   <h1>New Comment</h1>
   <!-- put the form below into a partial: comments/form -->
-  <%= form_for [@topic, @post, @comment] do |f| %>
-    <%= f.text_area :body, rows: 10 %>
-    <%= f.submit "Add Comment", class: 'btn' %>
-  <% end %>
+  <%= render partial: "comments/form", locals: { topic: @topic, post: @post, comment: @comment } %>
 
   <%= render partial: "form", locals: { topic: @topic, post: @post, comment: @comment } %>
 

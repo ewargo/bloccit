@@ -1,4 +1,6 @@
 class Comment < ActiveRecord::Base
+  validates :body, length: {minimum: 5}, presence: true
+
   belongs_to :post
   belongs_to :user
   attr_accessible :body, :user, :post_id, :post
