@@ -13,6 +13,11 @@
   <h1>Comments</h1>
   There are <%= @comments.count %> comments.
   <%= render partial: "comments/comment", collection: @comments %>
+
+  <a href="#" class="js-show-hide" data-selector="js-new-comment">Add Comment</a>
+
+  <div class="js-new-comment hide">
+    
   <h1>New Comment</h1>
   <!-- put the form below into a partial: comments/form -->
   <%= render partial: "comments/form", locals: { topic: @topic, post: @post, comment: @comment } %>
