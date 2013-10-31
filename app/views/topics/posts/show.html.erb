@@ -12,6 +12,7 @@
   </div>
   <h1>Comments</h1>
   There are <%= @comments.count %> comments.
+  <h2 class='js-comments-count'><%= @comments.count %> Comments</h2>
   <%= render partial: "comments/comment", collection: @comments %>
 
   <a href="#" class="js-show-hide" data-selector="js-new-comment">Add Comment</a>
@@ -20,11 +21,10 @@
     
   <h1>New Comment</h1>
   <!-- put the form below into a partial: comments/form -->
+  
   <%= render partial: "comments/form", locals: { topic: @topic, post: @post, comment: @comment } %>
 
   <%= render partial: "form", locals: { topic: @topic, post: @post, comment: @comment } %>
-
-  <%= link_to "Add Comment", [@topic, @post, @comment], method: :create, class: 'btn' %>
   
   <div class="span4">
     <% if can? :edit, @post %>
